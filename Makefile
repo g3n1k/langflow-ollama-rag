@@ -6,3 +6,6 @@ down:
 	
 ollama-in:
 	docker compose exec ollama sh
+
+setup-folder:
+	mkdir -p data/db/chroma
