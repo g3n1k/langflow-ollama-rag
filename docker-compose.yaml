@@ -1,0 +1,23 @@
+services:
+  langflow:
+    image: langflowai/langflow:1.3.0
+    container_name: langflow
+    ports:
+      - "7860:7860" # Port default Langflow
+    environment:
+      - LANGFLOW_HOST=0.0.0.0
+      - LANGFLOW_PORT=7860
+      # - LANGFLOW_DATABASE_URL=sqlite:///langflow.db
+    volumes:
+      - ./data:/app/data # untuk menyimpan data secara persisten
+    # restart: unless-stopped
+  ollama:
+    image: ollama/ollama
+    container_name: ollama
+    # ports:
+    #   - "11434:11434"
+    expose:
+      - 11434
+    volumes:
+      - ./ollama:/root/.ollama
+    restart: unless-stopped

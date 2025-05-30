@@ -1,0 +1,6 @@
+!.gitkeep
+catatan.md
+data/.cache
+data/.composio
+data/.mem0
+ollama/*
